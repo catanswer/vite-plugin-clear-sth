@@ -1,5 +1,4 @@
 import type { Plugin } from 'vite'
-import { createFilter } from 'rollup-pluginutils'
 import { Options } from './types'
 
 // merge field function
@@ -27,21 +26,23 @@ export default function(options: Options = {
   const excludeDefault: Array<RegExp> = [/node_modules/]
   let excludes = mergeField(options.exclude, excludeDefault)
 
-  const filter = createFilter(includes, excludes)
-
   return {
     name: 'vite-plugin-clear-sth',
     apply: 'build',
     transform(code, id) {
-      if (!filter(id)) return
+      includes.forEach(item => {
+        if (!item.test(id)) return
+      })
+      excludes.forEach(item => {
+        if (item.test(id)) return
+      })
 
       let generatedCode = ''
       options.patterns.forEach(item => {
         generatedCode = code.replace(item, '')
       })
       return {
-        code: generatedCode,
-        map: '<clean sth>'
+        code: generatedCode
       }
     }
   }
