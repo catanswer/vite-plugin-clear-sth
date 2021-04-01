@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-clear-sth",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "Access to clear sth what you want when your project is building",
   "main": "dist/index.js",
   "repository": {
