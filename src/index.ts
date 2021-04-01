@@ -32,8 +32,8 @@ export default function(options: Options = {
   return {
     name: 'vite-plugin-clear-sth',
     apply: 'build',
-    transform(code, id) {
-      if (!filter(id)) return
+    transform(code, map) {
+      if (!filter(map)) return
 
       let generatedCode = ''
       options.patterns.forEach(item => {
@@ -41,7 +41,7 @@ export default function(options: Options = {
       })
       return {
         code: generatedCode,
-        map: null
+        map
       }
     }
   }
