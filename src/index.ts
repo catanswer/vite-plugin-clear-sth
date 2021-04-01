@@ -41,7 +41,7 @@ export default function(options: Options = {
       })
       return {
         code: generatedCode,
-        map: { mappings: '' }
+        map: '<clean sth>'
       }
     }
   }
