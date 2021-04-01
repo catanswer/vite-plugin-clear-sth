@@ -39,7 +39,10 @@ export default function(options: Options = {
       options.patterns.forEach(item => {
         generatedCode = code.replace(item, '')
       })
-      return generatedCode
+      return {
+        code: generatedCode,
+        map: { mappings: '' }
+      }
     }
   }
 }
