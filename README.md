@@ -19,7 +19,7 @@ Add it to `vite.config.js`
       vue(),
       clearSth({
         // what you want to clear by your patterns
-        patterns: [/console.log\(.*\)/],
+        patterns: [/console.log\(.*\)/g],
         include: [],
         exclude: []
       })
