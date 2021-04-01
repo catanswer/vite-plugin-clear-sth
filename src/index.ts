@@ -40,7 +40,8 @@ export default function(options: Options = {
         generatedCode = code.replace(item, '')
       })
       return {
-        code: generatedCode
+        code: generatedCode,
+        map: null
       }
     }
   }
