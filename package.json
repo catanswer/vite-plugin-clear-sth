@@ -2,7 +2,7 @@
   "name": "vite-plugin-clear-sth",
   "version": "0.0.1",
   "description": "Access to clear sth what you want when your project is building",
-  "main": "dist/index.ts",
+  "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/catanswer/vite-plugin-clear-sth"
